@@ -1,6 +1,44 @@
 package gocord
 
-import "time"
+import (
+	"time"
+)
+
+type MemberGuild struct {
+	user                         User
+	nick                         string
+	avatar                       string
+	roles                        []string
+	joined_at                    time.Time
+	premium_since                time.Time
+	deaf                         bool
+	mute                         bool
+	pending                      bool
+	permissions                  string
+	communication_disabled_until time.Time
+}
+
+type WelcomeScreenChannel struct {
+	channel_id  string
+	description string
+	emoji_id    string
+	emoji_name  string
+}
+
+type WelcomeScreen struct {
+	description      string
+	welcome_channels []WelcomeScreenChannel
+}
+
+type StageInstance struct {
+	id                       string
+	guild_id                 string
+	channel_id               string
+	topic                    string
+	privacy_level            int
+	discoverable_disabled    bool
+	guild_scheduled_event_id string
+}
 
 type Guild struct {
 	id                            string
@@ -31,6 +69,30 @@ type Guild struct {
 	joined_at                     time.Time
 	large                         bool
 	unavailable                   bool
+	member_count                  int
+	voice_states                  Voice
+	members                       []MemberGuild
+	channels                      []Channel
+	threads                       []Channel
+	max_presences                 int
+	max_members                   int
+	vanity_url_code               string
+	description                   string
+	banner                        string
+	premium_tier                  int
+	premium_subscription_count    int
+	preferred_locale              string
+	public_updates_channel_id     string
+	max_video_channel_users       int
+	approximate_member_count      int
+	approximate_presence_count    int
+	welcome_screen                WelcomeScreen
+	nsfw_level                    int
+	stage_instances               StageInstance
+	stickers                      Sticker
+	guild_scheduled_events        GuildScheduled
+	premium_progress_bar_enabled  bool
+	// presences []PresenceUpdate
 }
 
 const (

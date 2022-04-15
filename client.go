@@ -27,3 +27,15 @@ type Application struct {
 	install_params         InstallParams
 	custom_install_url     string
 }
+
+type Client struct {
+	token       string
+	api_version string
+	api_url     string
+}
+
+func client(token string) Client {
+	client := Client{token, "v9", "https://discord.com/api/"}
+
+	return client
+}
