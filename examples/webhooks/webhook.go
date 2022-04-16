@@ -1,6 +1,10 @@
 package main
 
+import (
+	gocord "github.com/solindekdev/gocord"
+)
+
 func main() {
-	Client := client("NzQwNjEyMTU0MDYyNzk4OTI4.Xyri0Q.vqwsDRkmVppl73YTfd-hH9U528c")
-	Client.allWebhooksOfChannel("963859949505642516")
+	Client := gocord.NewClient("NzQwNjEyMTU0MDYyNzk4OTI4.Xyri0Q.EaEOyvNbmvXwZsxZa1SszuiMwCE")
+	Client.AllWebhooksOfChannel("963859949505642516")
 }

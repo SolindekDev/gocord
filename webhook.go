@@ -23,12 +23,12 @@ type Webhook struct {
 	source_channel Channel
 }
 
-func (c Client) createWebhook(w Webhook) *int {
+func (c Client) CreateWebhook(w Webhook) *int {
 
 	return nil
 }
 
-func (c Client) allWebhooksOfChannel(channelid string) []Webhook {
+func (c Client) AllWebhooksOfChannel(channelid string) []Webhook {
 	var webhooks []Webhook
 	// response, err := http.Get(c.api_url + c.api_version + "/channels/" + channel.id + "/webhooks")
 	req, err := http.NewRequest("GET", c.api_url+c.api_version+"/channels/"+channelid+"/webhooks", nil) // Create a request

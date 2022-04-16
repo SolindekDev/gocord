@@ -34,7 +34,7 @@ type Client struct {
 	api_url     string
 }
 
-func client(token string) Client {
+func NewClient(token string) Client {
 	client := Client{token, "v9", "https://discord.com/api/"}
 
 	return client
